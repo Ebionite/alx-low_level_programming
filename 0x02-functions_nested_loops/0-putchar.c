@@ -1,19 +1,19 @@
 #include "main.h"
 
 /**
- * main - function to print
- *
- * Return: 0
+ * main - Entry point
+ * Return:0
  */
+
 int main(void)
 {
-	char main[9] = {'H', 'o', 'l', 'b', 'e', 'r', 't', 'o', 'n'};
-	unsigned int c;
-
-	for (c = 0; c < sizeof(main); c++)
-	{
-		_putchar(main[c]);
-	}
+char c[9] = "_putchar";
+int i = 0;
+while (i < 8)
+{
+_putchar(c[i]);
+i++;
+}
 _putchar('\n');
 return (0);
 }
