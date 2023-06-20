@@ -1,18 +1,16 @@
 #include "main.h"
 /**
- * main - prints _putchar, fllowd by a new linees
- * Return: Alwys 0 (Success)
- */
-int main(void)
+ * main - Prints _putchar followed by a newline
+ * Return: Always 0.
+ */int main(void)
 {
-	char abe[] = "_putchar";
-
-	int c;
-
-	for (c = 0; c < 8; c++)
+	int str[] = {95, 112, 117, 116, 99, 104, 97, 114};
+	int count, sz;
+	
+	sz = sizeof(str) / sizeof(int);
+	for (count = 0; count < sz; count++)
 	{
-		_putchar(abe[c]);
-	}
-	_putchar('\n');
+	       _putchar(str[count]);
+	} _putchar('\n');
 	return (0);
-}
+ }
