@@ -1,19 +1,18 @@
 #include "main.h"
-
 /**
- * main - Entry point
- * Return:0
+ * main - prints _putchar, fllowd by a new linees
+ * Return: Alwys 0 (Success)
  */
-
 int main(void)
 {
-char c[9] = "_putchar";
-int i = 0;
-while (i < 8)
-{
-_putchar(c[i]);
-i++;
-}
-_putchar('\n');
-return (0);
+	char abe[] = "_putchar";
+
+	int c;
+
+	for (c = 0; c < 8; c++)
+	{
+		_putchar(abe[c]);
+	}
+	_putchar('\n');
+	return (0);
 }
