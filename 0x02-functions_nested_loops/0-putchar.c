@@ -1,19 +1,19 @@
 #include "main.h"
 
 /**
- *  * main - Entry point
- *   * Return:0
- *    */
-
+ * main - function to print
+ *
+ * Return: 0
+ */
 int main(void)
 {
-	char c[9] = "_putchar";
-	int i = 0;
-	while (i < 8)
+	char holberton[9] = {'H', 'o', 'l', 'b', 'e', 'r', 't', 'o', 'n'};
+	unsigned int c;
+
+	for (c = 0; c < sizeof(main); c++)
 	{
-		_putchar(c[i]);
-		i++;
+		_putchar(main[c]);
 	}
-	_putchar('\n');
-	return (0);
+_putchar('\n');
+return (0);
 }
