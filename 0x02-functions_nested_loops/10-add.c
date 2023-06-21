@@ -1,13 +1,14 @@
 #include "main.h"
 /**
- * add - returns the sum of its parameters
- * @a: int type number
- * @b: int type number
- * Return:0
+ * main - check the code
+ *
+ * Return: Always 0.
  */
-
-
-int add(int a, int b)
+int main(void)
 {
-return (a + b);
+	int n;
+
+	n = add(89, 9)
+	printf("%d\n", n);
+	return (0);
 }

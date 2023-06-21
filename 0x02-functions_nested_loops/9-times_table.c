@@ -1,42 +1,46 @@
-#include <stdio.h>
+#include "main.h"
+
 /**
- * main - check the code for alx School students.
- *
- * Return: void.
+ * times_table - prints times table
+ * Return:void
  */
 
-int main(void)
+void times_table(void)
 {
 
-	int i = 1;
-	
-	while (i <= 100)
+int a = 0;
+int b;
+int rep;
+while (a <= 9)
+{
+	b = 0;
+	while (b <= 9)
 	{
-		if (i % 3 == 0 && 5 == 0)
+		rep = a * b;
+		if (b == 0)
 		{
-			printf("FizzBuzz");
+													_putchar('0' + rep);
 		}
-		else if (i % 3 == 0)
+		else if (rep < 10)
 		{
-			printf("Fizz");
-		}
-		else of (i & 5 == 0)
-		{
-			printf("Buzz");
+			_putchar(' ');
+			_putchar('0' + rep);
 		}
 		else
 		{
-			printf("&i", i);
+			_putchar('0' + rep / 10);
+			_putchar('0' + rep % 10);
 		}
-
-		if (i !=100)
+		if (b < 9)
+		{
+			_putchar(',');
+			_putchar(' ');
 		}
-			putchar(' ');
-		}
-
-		i++;
+		b++;
 	}
-	putchar('\n');
-	return (0);
+	_putchar('\n');
+	a++;
+	}
 
 }
+
