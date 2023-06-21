@@ -1,20 +1,19 @@
 #include "main.h"
 
 /**
- * main - Prints _putchar followed by a newline
- *
- * Return: Always 0.
+ * main - Entry point
+ * Return:0
  */
+
 int main(void)
 {
-int str[] = {95, 112, 117, 116, 99, 104, 97, 114};
-int count, sz;
-
-sz = sizeof(str) / sizeof(int);
-for (count = 0; count < sz; count++)
-{
-	_putchar(str[count]);
-} 
+	char c[9] = "_putchar";
+	int i = 0;
+	while (i < 8)
+	{
+		_putchar(c[i]);
+		i++;
+	}
 	_putchar('\n');
 	return (0);
- }
+}
