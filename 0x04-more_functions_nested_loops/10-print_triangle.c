@@ -1,21 +1,33 @@
-#include "main.h"
+#include "holberton.h"
 
 /**
- * print_triangle - print triangle of variable length
- * @size: triangle height
+ * print_triangle - Prints a triangle of squares according parameter
+ * @size: The size of the squares triangle
+ *
+ * Return: empty
  */
 void print_triangle(int size)
 {
-	int i, m;
-	m = size;
+	int x, y, z;
 
 	if (size <= 0)
-		_putchar('\n');
-	while (size > 0)
 	{
-	for (i = 0; i < m; i++)
-		_putchar((i < size - 1) ? ' ' : '#');
 		_putchar('\n');
-		size--;
+	}
+	else
+	{
+		for (x = 0; x < size; x++)
+		{
+			for (y = size - x; y > 1; y--)
+			{
+				_putchar(32);
+			}
+			for (z = 0; z <= x; z++)
+			{
+				_putchar(35);
+			}
+
+			_putchar('\n');
+		}
 	}
 }
