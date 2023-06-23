@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stdio.h>
+
 /**
  * main - main block
  * Description: computes and prints the sum of all the multiples of 3 or
@@ -25,7 +26,6 @@ int main(void)
 		aft += bef;
 		bef = aft - bef;
 	}
-	
 	bef1 = (bef / l);
 	bef2 = (bef % l);
 	aft1 = (aft / l);
