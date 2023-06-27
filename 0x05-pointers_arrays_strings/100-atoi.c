@@ -1,22 +1,49 @@
-#include "main.h"
+#include "holberton.h"
 #include <stdio.h>
+/**
+ *mapint - maps a character to its integer form
+ *@a: character to be mapped
+ *Return: the integer version of the char
+ */
+
+int mapint(char a)
+{
+	if (a >= 48 && a <= 57)
+		return ((int)a - 48);
+	return (0);
+}
+/**
+ * isDigit - returns true if i is a number
+ * @i: integer i
+ * Return: true if number, false if not
+ */
+int isDigit(char i)
+{
+	return (i >= '0' && i <= '9');
+}
 
 /**
- * _strcpy - Copy a string
- * @dest: Destination value
- * @src: Source value
- *
- * Return: the pointer to dest
+ * _atoi - converts a string to integer
+ * @s: string s
+ * Return: returns parsed integer
  */
-char *_strcpy(char *dest, char *src)
+int _atoi(char *s)
 {
-	int i;
+	int num = 0, sign = 1, started = 0;/*1 for true and 0 for false*/
 
-	for (i = 0; src[i] != '\0'; i++)
+	while (*s)
 	{
-		dest[i] = src[i];
+		/*if a number is already countign and a non number is found break*/
+		if (started && !isDigit(*s))
+			break;
+		if (*s == '-')
+			sign *= -1;
+		if (isDigit(*s))
+		{
+			started = 1;
+			num =  num * 10 + mapint(*s);
+		}
+		s++;
 	}
-
-	dest[i++] = '\0';
-	return (dest);
+	return (sign * num);
 }
