@@ -1,25 +1,32 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
- * print_number - Prints any integer with putchar
- * @n: Number to prints
- *
- * Return: Nothing
- */
-void print_number(int n)
+  * rot13 - ...
+  * @s: ...
+  *
+  * Return: ...
+  */
+char *rot13(char *s)
 {
-	unsigned int x;
+	int a = 0;
 
-	if (n < 0)
+	while (s[a])
 	{
-		_putchar('-');
-		n *= -1;
+		while ((s[a] >= 'a' && s[a] <= 'z') || (s[a] >= 'A' && s[a] <= 'Z'))
+		{
+			if ((s[a] > 'm' && s[a] <= 'z') || (s[a] > 'M' && s[a] <= 'Z'))
+			{
+				s[a] -= 13;
+				break;
+			}
+
+			s[a] += 13;
+			break;
+		}
+
+		a++;
 	}
 
-	x = n;
-
-	if (x / 10)
-		print_number(x / 10);
-
-	_putchar(x % 10 + '0');
+	return (s);
 }
