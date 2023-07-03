@@ -1,5 +1,5 @@
 #include "main.h"
-
+#include <stdio.h>
 /**
   * print_chessboard - Print the chessboard
   * @a: array of pieces
