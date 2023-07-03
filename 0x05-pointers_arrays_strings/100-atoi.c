@@ -1,49 +1,40 @@
 #include "main.h"
-#include <stdio.h>
-/**
- *mapint - maps a character to its integer form
- *@a: character to be mapped
- *Return: the integer version of the char
- */
-
-int mapint(char a)
-{
-	if (a >= 48 && a <= 57)
-		return ((int)a - 48);
-	return (0);
-}
-/**
- * isDigit - returns true if i is a number
- * @i: integer i
- * Return: true if number, false if not
- */
-int isDigit(char i)
-{
-	return (i >= '0' && i <= '9');
-}
 
 /**
- * _atoi - converts a string to integer
- * @s: string s
- * Return: returns parsed integer
+ * _atoi - Convert a string to an integer.
+ * @s: The pointer to convert
+ *
+ * Return: A integer
  */
 int _atoi(char *s)
 {
-	int num = 0, sign = 1, started = 0;/*1 for true and 0 for false*/
+	int c = 0;
+	unsigned int ni = 0;
+	int min = 1;
+	int isi = 0;
 
-	while (*s)
+	while (s[c])
 	{
-		/*if a number is already countign and a non number is found break*/
-		if (started && !isDigit(*s))
-			break;
-		if (*s == '-')
-			sign *= -1;
-		if (isDigit(*s))
+		if (s[c] == 45)
 		{
-			started = 1;
-			num =  num * 10 + mapint(*s);
+			min *= -1;
 		}
-		s++;
+
+		while (s[c] >= 48 && s[c] <= 57)
+		{
+			isi = 1;
+			ni = (ni * 10) + (s[c] - '0');
+			c++;
+		}
+
+		if (isi == 1)
+		{
+			break;
+		}
+
+		c++;
 	}
-	return (sign * num);
+
+	ni *= min;
+	return (ni);
 }
