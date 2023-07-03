@@ -65,5 +65,3 @@ Write a function that prints the sum of the two diagonals of a square matrix of 
 •	Format: see example
 •	You are allowed to use the standard library
 Note that in the following example we are casting an int[][] into an int*. This is not something you should do. The goal here is to make sure you understand how an array of array is stored in memory.
-
-
