@@ -1,14 +1,15 @@
 #include "main.h"
 #include <stdio.h>
 #include <stdlib.h>
+
 char *create_buffer(char *file);
 void close_file(int fd);
 
 /**
- * create_buffer - Allocate 1024 bytes for each buffer.
- * @file: The file name file buffer is storing chars for.
+ * create_buffer - Allocates 1024 bytes for a buffer.
+ * @file: The name of the file buffer is storing chars for.
  *
- * Return: A pointer that poin to the newly-allocated buffer.
+ * Return: A pointer to the newly-allocated buffer.
  */
 char *create_buffer(char *file)
 {
@@ -19,20 +20,20 @@ char *create_buffer(char *file)
 	if (buffer == NULL)
 	{
 		dprintf(STDERR_FILENO,
-			"Error: Can't write to %s/n", file);
-		it(99);
+			"Error: Can't write to %s\n", file);
+		exit(99);
 	}
 
 	return (buffer);
 }
 
 /**
- * close_file - To closes the file descriptors.
- * @fd: The file descriptor that is to be closed.
+ * close_file - Closes file descriptors.
+ * @fd: The file descriptor to be closed.
  */
 void close_file(int fd)
 {
-	nt c;
+	int c;
 
 	c = close(fd);
 
@@ -44,16 +45,16 @@ void close_file(int fd)
 }
 
 /**
- * main - Copies contents of one file to the other file.
- * @argc: Number of arguments that is supplied to the program.
- * @argv: An array of pointers pointing to the arguments.
+ * main - Copies the contents of a file to another file.
+ * @argc: The number of arguments supplied to the program.
+ * @argv: An array of pointers to the arguments.
  *
  * Return: 0 on success.
  *
- * Description: If the argument count is not incorrect - exit code 97.
- * If file_from is not found or cannot be read - exit code 98.
- * If file_to cannot is not created or written to - exit code 99.
- * If file_to or file_from cannot not able to be closed - exit code 100.
+ * Description: If the argument count is incorrect - exit code 97.
+ * If file_from does not exist or cannot be read - exit code 98.
+ * If file_to cannot be created or written to - exit code 99.
+ * If file_to or file_from cannot be closed - exit code 100.
  */
 int main(int argc, char *argv[])
 {
@@ -88,10 +89,12 @@ int main(int argc, char *argv[])
 			free(buffer);
 			exit(99);
 		}
+
 		r = read(from, buffer, 1024);
 		to = open(argv[2], O_WRONLY | O_APPEND);
 
 	} while (r > 0);
+
 	free(buffer);
 	close_file(from);
 	close_file(to);
